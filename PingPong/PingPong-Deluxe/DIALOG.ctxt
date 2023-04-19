@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=DIALOG
+comment0.text=\n\ Klasse\ DIALOG\ der\ EDU-Variante\ der\ Engine\ Alpha.\ \n\ Vier\ Methoden\ realisieren\ Dialog-Fenster\ zur\ Kommunikation\ mit\ dem\ Spieler.\ \n\ Die\ Methoden\ setzen\ ein\ existierendes\ Spiele-Fenster\ voraus.\ Sollte\ dieses\ noch\ nicht\ \n\ instanziiert\ worden\ sein,\ so\ wird\ es\ beim\ Methoden-Aufruf\ erzeugt.\n\ \n\ @author\ \ \ \ \ \ mike\ ganshorn\n\ \n\ @version\ \ \ \ \ 2.0\ (2017-04-11)\n
+comment1.params=
+comment1.target=DIALOG()
+comment1.text=\n\ Konstruktor\ der\ Klasse\ DIALOG.\ \n\ Ein\ Dialog-Objekt\ kann\ diverse\ Dialog-Fenster\ erzeugen.\n
+comment2.params=frage
+comment2.target=boolean\ frage(java.lang.String)
+comment2.text=\n\ Zeigt\ ein\ Fenster\ mit\ einer\ Frage\ an,\ wodurch\ das\ Spiele-Fenster\ verdeckt\ wird.\ \n\ Erst\ wenn\ der\ Dialog\ mit\ JA\ oder\ NEIN\ besaetigt\ wurde,\ ist\ das\ Spiele-Fenster\ wieder\ frei.\ \n\ VORSICHT\!\ Das\ Spiel\ sollte\ vorher\ angehalten\ werden,\ da\ es\ sonst\ verdeckt\ weiter\ laeuft.\n\n\ @param\ \ \ frage\ \ \ Die\ Frage,\ die\ an\ den\ Spieler\ gestellt\ werden\ soll.\n\ \n\ @return\ \ 'true',\ wenn\ JA\ geklickt\ wurde,\ sonst\ 'false'\n
+comment3.params=nachricht
+comment3.target=void\ nachricht(java.lang.String)
+comment3.text=\n\ Zeigt\ ein\ Fenster\ mit\ einer\ Nachricht\ an,\ wodurch\ das\ Spiele-Fenster\ verdeckt\ wird.\ \n\ Erst\ wenn\ der\ Dialog\ mit\ OK\ besaetigt\ wurde,\ ist\ das\ Spiele-Fenster\ wieder\ frei.\ \n\ VORSICHT\!\ Das\ Spiel\ sollte\ vorher\ angehalten\ werden,\ da\ es\ sonst\ verdeckt\ weiter\ laeuft.\n\n\ @param\ \ \ nachricht\ \ \ \ \ \ \ Die\ Nachricht,\ die\ an\ den\ Spieler\ gestellt\ werden\ soll.\n\ \n
+comment4.params=frage
+comment4.target=java.lang.String\ eingabe(java.lang.String)
+comment4.text=\n\ Zeigt\ ein\ Fenster\ mit\ einer\ Frage\ an,\ wodurch\ das\ Spiele-Fenster\ verdeckt\ wird.\ \n\ Der\ Spieler\ kann\ etwas\ in\ eine\ Eingabe-Zeile\ schreiben.\ \n\ Erst\ wenn\ der\ Dialog\ mit\ OK\ besaetigt\ wurde,\ ist\ das\ Spiele-Fenster\ wieder\ frei.\ \n\ VORSICHT\!\ Das\ Spiel\ sollte\ vorher\ angehalten\ werden,\ da\ es\ sonst\ verdeckt\ weiter\ laeuft.\n\n\ @param\ \ \ frage\ \ \ Die\ Frage,\ die\ an\ den\ Spieler\ gestellt\ werden\ soll\n\ \n\ @return\ \ Der\ Text,\ den\ der\ Spieler\ in\ die\ Eingabe-Zeile\ schreibt.\ (""\ bei\ leerer\ Eingabe-Zeile)\n
+comment5.params=namen\ punkte\ fensterTitel
+comment5.target=void\ highscoreAnzeige(java.lang.String[],\ int[],\ java.lang.String)
+comment5.text=\n\ Zeigt\ ein\ Fenster\ mit\ einer\ Highscore-Anzeige,\ wodurch\ das\ Spiele-Fenster\ verdeckt\ wird.\ \n\ Die\ Werte\ fuer\ die\ Highscores\ stammen\ aus\ uebergebenen\ Arrays,\ die\ vorher\ angelegt\ werden\ muessen.\ \n\ Erst\ wenn\ der\ Dialog\ mit\ JA\ oder\ NEIN\ besaetigt\ wurde,\ ist\ das\ Spiele-Fenster\ wieder\ frei.\ \n\ VORSICHT\!\ Das\ Spiel\ sollte\ vorher\ angehalten\ werden,\ da\ es\ sonst\ verdeckt\ weiter\ laeuft.\n\n\ @param\ \ \ namen\ \ \ \ \ \ \ \ \ \ \ Das\ Array\ mit\ den\ Spieler-Namen\ fuer\ die\ Highscore-Anzeige\n\ \n\ @param\ \ \ punkte\ \ \ \ \ \ \ \ \ \ Das\ Array\ mit\ den\ Punkte-Staenden\ fuer\ die\ Highscore-Anzeige\n\ \n\ @param\ \ \ fensterTitel\ \ \ \ Der\ gewuenschte\ Text\ im\ Fenster-Kopf\n
+numComments=6
