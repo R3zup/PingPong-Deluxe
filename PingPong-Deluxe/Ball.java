@@ -4,30 +4,29 @@ public class Ball extends KREIS
     private float deltaY;
     public Ball(int rNeu)
     {
-       super (rNeu);
-       deltaX = 0.2f;
-       deltaY = 0.2f;
+       super(rNeu);
+       deltaX = 3.0f;
+       deltaY = 3.0f;
     }
     
     public void bewegen()
     {
-        super.verschiebenUm(deltaX,deltaY);     
-        
-    if ( super.nenneMy() > 9 )
+        verschiebenUm(deltaX,deltaY);     
+        if ( super.nenneMy() > 600 )
     {
             
         this.deltaY = - deltaY;   
             
     }
         
-        if ( super.nenneMy() < -9 )
+        if ( super.nenneMy() < -600 )
     {
      
         this.deltaY =  -deltaY ;
         
     }
     
-    if ( super.nenneMx() > 12.5 )
+    if ( super.nenneMx() > 800 )
     {
         
         
@@ -35,13 +34,14 @@ public class Ball extends KREIS
         
     }
     
-    if ( super.nenneMx() < -12.5 )
+    if ( super.nenneMx() < -800 )
     {
         
         
         this.deltaX = -deltaX;
         
     }
+    
     }
 
 }

@@ -2,4 +2,6 @@
 comment0.target=PingPong
 comment1.params=
 comment1.target=PingPong()
-numComments=2
+comment2.params=
+comment2.target=void\ tick()
+numComments=3
