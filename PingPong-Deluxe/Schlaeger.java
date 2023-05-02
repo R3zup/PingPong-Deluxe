@@ -5,6 +5,9 @@ public class Schlaeger extends RECHTECK
     
     public Schlaeger()
     {
+      super();  
+      deltaX = 20;
+      deltaY = 50;
         
     }
 }

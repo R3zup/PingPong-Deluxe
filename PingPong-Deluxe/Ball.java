@@ -2,6 +2,8 @@ public class Ball extends KREIS
 {
     private float deltaX;
     private float deltaY;
+    private int punkteLinks;
+    private int punkteRechts;
     public Ball(int rNeu)
     {
        super(rNeu);
@@ -12,35 +14,21 @@ public class Ball extends KREIS
     public void bewegen()
     {
         verschiebenUm(deltaX,deltaY);     
-        if ( super.nenneMy() > 600 )
+        if ( super.nenneMy() > 580 )
     {
             
         this.deltaY = - deltaY;   
             
     }
         
-        if ( super.nenneMy() < -600 )
+        if ( super.nenneMy() < 20 )
     {
      
         this.deltaY =  -deltaY ;
         
     }
     
-    if ( super.nenneMx() > 800 )
-    {
-        
-        
-        this.deltaX = -deltaX;
-        
-    }
     
-    if ( super.nenneMx() < -800 )
-    {
-        
-        
-        this.deltaX = -deltaX;
-        
-    }
     
     }
 
