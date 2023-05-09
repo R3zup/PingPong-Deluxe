@@ -13,20 +13,20 @@ public class PingPong extends SPIEL
     {
         this.ball = new Ball(30);
         ball.setzeMittelpunkt(400, 300);
-        
+
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 1);
         this.geschwindigkeitsAnzeige = 1;
         geschwindigkeit.setzeFarbe("pink");
-        
+
         this.schlaeger1 = new Schlaeger();
         schlaeger1.setzeGroesse(20, 100);
         schlaeger1.setzeMittelpunkt(790, 300);
-        
+
         this.schlaeger2 = new Schlaeger();
         schlaeger2.setzeGroesse(20, 100);
         schlaeger2.setzeMittelpunkt(10, 300);
         schlaeger2.setzeFarbe("türkis");
-        
+
         tickerNeuStarten(20);
         setzeAllePunkteanzeigenSichtbar();
         this.tickerIntervall = 20;
@@ -34,7 +34,7 @@ public class PingPong extends SPIEL
 
     public void punkten()
     {
-        
+
         if(ball.getX() >= 780)
         {
             this.punkteLinks = this.punkteLinks +1;
@@ -42,13 +42,13 @@ public class PingPong extends SPIEL
             ball.setzeMittelpunkt(400, 300);
             if(this.tickerIntervall > 11)
             {
-            this.tickerIntervall = this.tickerIntervall -1;
-            tickerIntervallSetzen(this.tickerIntervall);
-            this.geschwindigkeitsAnzeige = this.geschwindigkeitsAnzeige +1;
-            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + this.geschwindigkeitsAnzeige);
+                this.tickerIntervall = this.tickerIntervall -1;
+                tickerIntervallSetzen(this.tickerIntervall);
+                this.geschwindigkeitsAnzeige = this.geschwindigkeitsAnzeige +1;
+                geschwindigkeit.setzeInhalt("Geschwindigkeit: " + this.geschwindigkeitsAnzeige);
+            }
         }
-        }
-        
+
         if(ball.getX() <= 20)
         {
             this.punkteRechts = this.punkteRechts +1;
@@ -56,18 +56,59 @@ public class PingPong extends SPIEL
             ball.setzeMittelpunkt(400, 300);
             if(this.tickerIntervall > 11)
             {
-            this.tickerIntervall = this.tickerIntervall -1;
-            tickerIntervallSetzen(this.tickerIntervall);
-            this.geschwindigkeitsAnzeige = this.geschwindigkeitsAnzeige +1;
-            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + this.geschwindigkeitsAnzeige);
-        }
+                this.tickerIntervall = this.tickerIntervall -1;
+                tickerIntervallSetzen(this.tickerIntervall);
+                this.geschwindigkeitsAnzeige = this.geschwindigkeitsAnzeige +1;
+                geschwindigkeit.setzeInhalt("Geschwindigkeit: " + this.geschwindigkeitsAnzeige);
+            }
         }
     }
-    
+
+    public void zurückschlagen()
+    {
+
+    }
+
+    public void schlaegerBewegen()
+    {
+        if(schlaeger2.getY() >0)
+        {
+            if(tasteGedrueckt(22) == true)
+            {
+                schlaeger2.verschiebenUm(0, -5);
+            } 
+        }
+
+        if(schlaeger2.getY() <500)
+        {
+            if(tasteGedrueckt(18) == true)
+            {
+                schlaeger2.verschiebenUm(0, 5);
+            }
+        }
+        
+        if(schlaeger1.getY() >0)
+        {
+            if(tasteGedrueckt(26) == true)
+            {
+                schlaeger1.verschiebenUm(0, -5);
+            }
+        }
+
+        if(schlaeger1.getY() <500)
+        {
+            if(tasteGedrueckt(28) == true)
+            {
+                schlaeger1.verschiebenUm(0, 5);
+            }
+        }
+    }
+
     @Override
     public void tick()
     {
-       ball.bewegen();
-       punkten();
+        ball.bewegen();
+        punkten();
+        schlaegerBewegen();
     }
 }
