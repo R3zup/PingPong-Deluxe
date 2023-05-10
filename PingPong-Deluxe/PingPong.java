@@ -40,7 +40,7 @@ public class PingPong extends SPIEL
     public void punkten()
     {
 
-        if(ball.getX() >= 780)
+        if(ball.getX() >= 755)
         {
             this.punkteLinks = this.punkteLinks +1;
             setzePunkteanzeigeLinks(this.punkteLinks);
@@ -54,7 +54,7 @@ public class PingPong extends SPIEL
             }
         }
 
-        if(ball.getX() <= -10)
+        if(ball.getX() <= -25)
         {
             this.punkteRechts = this.punkteRechts +1;
             setzePunkteanzeigeRechts(this.punkteRechts);
@@ -70,12 +70,12 @@ public class PingPong extends SPIEL
 
         if(this.punkteRechts >= 30)
         {
-            tickerStoppen(); 
+            neustart();
         }
 
         if(this.punkteLinks >= 30)
         {
-            tickerStoppen();
+            neustart();
         }
     }
 
@@ -117,7 +117,7 @@ public class PingPong extends SPIEL
     public void bewegen()
     {
         ball.verschiebenUm(deltaX,deltaY);     
-        if ( ball.getY() > 565 )
+        if ( ball.getY() > 550 )
         {
 
             this.deltaY = - deltaY;   
@@ -148,6 +148,7 @@ public class PingPong extends SPIEL
         if(tasteGedrueckt(17))
         {
             tickerNeuStarten(15);
+            this.tickerIntervall = 15;
             setzePunkteanzeigeRechts(0);
             ball.setzeMittelpunkt(400, 300);
             setzePunkteanzeigeLinks(0);
