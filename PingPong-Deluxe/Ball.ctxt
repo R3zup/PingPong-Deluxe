@@ -2,6 +2,4 @@
 comment0.target=Ball
 comment1.params=rNeu
 comment1.target=Ball(int)
-comment2.params=
-comment2.target=void\ bewegen()
-numComments=3
+numComments=2

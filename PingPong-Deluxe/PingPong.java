@@ -8,6 +8,8 @@ public class PingPong extends SPIEL
     private int punkteRechts;
     private int tickerIntervall;
     private int geschwindigkeitsAnzeige;
+    private float deltaX;
+    private float deltaY;
 
     public PingPong()
     {
@@ -27,9 +29,12 @@ public class PingPong extends SPIEL
         schlaeger2.setzeMittelpunkt(10, 300);
         schlaeger2.setzeFarbe("türkis");
 
-        tickerNeuStarten(20);
+        deltaX = 3.0f;
+        deltaY = 3.0f;
+
+        tickerNeuStarten(15);
         setzeAllePunkteanzeigenSichtbar();
-        this.tickerIntervall = 20;
+        this.tickerIntervall = 15;
     }
 
     public void punkten()
@@ -40,7 +45,7 @@ public class PingPong extends SPIEL
             this.punkteLinks = this.punkteLinks +1;
             setzePunkteanzeigeLinks(this.punkteLinks);
             ball.setzeMittelpunkt(400, 300);
-            if(this.tickerIntervall > 11)
+            if(this.tickerIntervall > 6)
             {
                 this.tickerIntervall = this.tickerIntervall -1;
                 tickerIntervallSetzen(this.tickerIntervall);
@@ -49,12 +54,12 @@ public class PingPong extends SPIEL
             }
         }
 
-        if(ball.getX() <= 20)
+        if(ball.getX() <= -10)
         {
             this.punkteRechts = this.punkteRechts +1;
             setzePunkteanzeigeRechts(this.punkteRechts);
             ball.setzeMittelpunkt(400, 300);
-            if(this.tickerIntervall > 11)
+            if(this.tickerIntervall > 6)
             {
                 this.tickerIntervall = this.tickerIntervall -1;
                 tickerIntervallSetzen(this.tickerIntervall);
@@ -62,11 +67,16 @@ public class PingPong extends SPIEL
                 geschwindigkeit.setzeInhalt("Geschwindigkeit: " + this.geschwindigkeitsAnzeige);
             }
         }
-    }
 
-    public void zurückschlagen()
-    {
+        if(this.punkteRechts >= 30)
+        {
+            tickerStoppen(); 
+        }
 
+        if(this.punkteLinks >= 30)
+        {
+            tickerStoppen();
+        }
     }
 
     public void schlaegerBewegen()
@@ -75,7 +85,7 @@ public class PingPong extends SPIEL
         {
             if(tasteGedrueckt(22) == true)
             {
-                schlaeger2.verschiebenUm(0, -5);
+                schlaeger2.verschiebenUm(0, -3);
             } 
         }
 
@@ -83,15 +93,15 @@ public class PingPong extends SPIEL
         {
             if(tasteGedrueckt(18) == true)
             {
-                schlaeger2.verschiebenUm(0, 5);
+                schlaeger2.verschiebenUm(0, 3);
             }
         }
-        
+
         if(schlaeger1.getY() >0)
         {
             if(tasteGedrueckt(26) == true)
             {
-                schlaeger1.verschiebenUm(0, -5);
+                schlaeger1.verschiebenUm(0, -3);
             }
         }
 
@@ -99,16 +109,63 @@ public class PingPong extends SPIEL
         {
             if(tasteGedrueckt(28) == true)
             {
-                schlaeger1.verschiebenUm(0, 5);
+                schlaeger1.verschiebenUm(0, 3);
             }
         }
+    }
+
+    public void bewegen()
+    {
+        ball.verschiebenUm(deltaX,deltaY);     
+        if ( ball.getY() > 565 )
+        {
+
+            this.deltaY = - deltaY;   
+
+        }
+
+        if ( ball.getY() < 0 )
+        {
+
+            this.deltaY =  - deltaY ;
+
+        }
+
+        if(schlaeger2.beruehrt(ball) == true)
+        {
+            this.deltaX = - deltaX;
+        }
+
+        if(schlaeger1.beruehrt(ball) == true)
+        {
+            this.deltaX = - deltaX;
+        }
+
+    }
+
+    public void neustart()
+    {
+        if(tasteGedrueckt(17))
+        {
+            tickerNeuStarten(15);
+            setzePunkteanzeigeRechts(0);
+            ball.setzeMittelpunkt(400, 300);
+            setzePunkteanzeigeLinks(0);
+            this.punkteRechts = 0;
+            this.punkteLinks = 0;
+            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + 1);
+            this.geschwindigkeitsAnzeige = 1;
+            schlaeger1.setzeMittelpunkt(790, 300);
+            schlaeger2.setzeMittelpunkt(10, 300);
+        }   
     }
 
     @Override
     public void tick()
     {
-        ball.bewegen();
+        bewegen();
         punkten();
         schlaegerBewegen();
+        neustart();
     }
 }
