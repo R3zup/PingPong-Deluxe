@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=PingPongCom
-comment1.params=
-comment1.target=PingPongCom()
+comment1.params=spieler
+comment1.target=PingPongCom(java.lang.String)
 comment2.params=
 comment2.target=void\ punkten()
 comment3.params=
@@ -11,5 +11,7 @@ comment4.target=void\ bewegen()
 comment5.params=
 comment5.target=void\ neustart()
 comment6.params=
-comment6.target=void\ tick()
-numComments=7
+comment6.target=void\ highscoreSpeichern()
+comment7.params=
+comment7.target=void\ tick()
+numComments=8

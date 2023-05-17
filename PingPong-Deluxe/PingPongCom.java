@@ -1,3 +1,9 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class PingPongCom extends SPIEL
 {
     private Ball ball;
@@ -10,12 +16,15 @@ public class PingPongCom extends SPIEL
     private int geschwindigkeitsAnzeige;
     private float deltaX;
     private float deltaY;
+    private String spieler;
 
-    public PingPongCom()
+    public PingPongCom(String spieler)
     {
         this.ball = new Ball(30);
         ball.setzeMittelpunkt(400, 300);
 
+        this.spieler = spieler;
+        
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 1);
         this.geschwindigkeitsAnzeige = 1;
         geschwindigkeit.setzeFarbe("pink");
@@ -68,12 +77,7 @@ public class PingPongCom extends SPIEL
             }
         }
 
-        if(this.punkteRechts >= 30)
-        {
-            neustart();
-        }
-
-        if(this.punkteLinks >= 30)
+        if(this.punkteLinks >= 3)
         {
             neustart();
         }
@@ -82,21 +86,21 @@ public class PingPongCom extends SPIEL
     public void schlaegerBewegen()
     {
 
-        if(schlaeger2.getY() <500)
+        if(schlaeger2.getY() <450)
         {
 
             if(ball.getY() >300)
             {
-                schlaeger2.verschiebenUm(0,4);
+                schlaeger2.verschiebenUm(0,3);
             }
         }
 
-        if(schlaeger2.getY() >0)
+        if(schlaeger2.getY() >50)
         {
 
             if(ball.getY() <300)
             {
-                schlaeger2.verschiebenUm(0,-4);
+                schlaeger2.verschiebenUm(0,-3);
             }
         }
 
@@ -162,6 +166,18 @@ public class PingPongCom extends SPIEL
             schlaeger1.setzeMittelpunkt(790, 300);
             schlaeger2.setzeMittelpunkt(10, 300);
         }   
+    }
+
+    public void highscoreSpeichern() {
+        Path p = Path.of("/Users/Guest/Downloads/PingPong-Deluxe-main/Highscore.txt");
+        try {
+            String x = Files.readString(p);
+            Path filePath = Files.writeString(p, x + "\n" + this.spieler + ":" + punkteRechts);
+            String s = Files.readString(filePath);
+            System.out.println(s);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
