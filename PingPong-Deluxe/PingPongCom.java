@@ -20,11 +20,11 @@ public class PingPongCom extends SPIEL
 
     public PingPongCom(String spieler)
     {
-        this.ball = new Ball(30);
+        this.ball = new Ball(25);
         ball.setzeMittelpunkt(400, 300);
 
         this.spieler = spieler;
-        
+
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 1);
         this.geschwindigkeitsAnzeige = 1;
         geschwindigkeit.setzeFarbe("pink");
@@ -79,7 +79,18 @@ public class PingPongCom extends SPIEL
 
         if(this.punkteLinks >= 3)
         {
-            neustart();
+            highscoreSpeichern();
+            tickerNeuStarten(15);
+            this.tickerIntervall = 15;
+            setzePunkteanzeigeRechts(0);
+            ball.setzeMittelpunkt(400, 300);
+            setzePunkteanzeigeLinks(0);
+            this.punkteRechts = 0;
+            this.punkteLinks = 0;
+            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + 1);
+            this.geschwindigkeitsAnzeige = 1;
+            schlaeger1.setzeMittelpunkt(790, 300);
+            schlaeger2.setzeMittelpunkt(10, 300); 
         }
     }
 

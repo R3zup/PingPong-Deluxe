@@ -13,7 +13,7 @@ public class PingPong extends SPIEL
 
     public PingPong()
     {
-        this.ball = new Ball(30);
+        this.ball = new Ball(25);
         ball.setzeMittelpunkt(400, 300);
 
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 1);
@@ -70,12 +70,32 @@ public class PingPong extends SPIEL
 
         if(this.punkteRechts >= 30)
         {
-            neustart();
+            tickerNeuStarten(15);
+            this.tickerIntervall = 15;
+            setzePunkteanzeigeRechts(0);
+            ball.setzeMittelpunkt(400, 300);
+            setzePunkteanzeigeLinks(0);
+            this.punkteRechts = 0;
+            this.punkteLinks = 0;
+            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + 1);
+            this.geschwindigkeitsAnzeige = 1;
+            schlaeger1.setzeMittelpunkt(790, 300);
+            schlaeger2.setzeMittelpunkt(10, 300);
         }
 
         if(this.punkteLinks >= 30)
         {
-            neustart();
+            tickerNeuStarten(15);
+            this.tickerIntervall = 15;
+            setzePunkteanzeigeRechts(0);
+            ball.setzeMittelpunkt(400, 300);
+            setzePunkteanzeigeLinks(0);
+            this.punkteRechts = 0;
+            this.punkteLinks = 0;
+            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + 1);
+            this.geschwindigkeitsAnzeige = 1;
+            schlaeger1.setzeMittelpunkt(790, 300);
+            schlaeger2.setzeMittelpunkt(10, 300);
         }
     }
 
