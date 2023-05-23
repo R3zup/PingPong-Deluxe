@@ -10,6 +10,7 @@ public class PingPongCom extends SPIEL
     private Schlaeger schlaeger1;
     private Schlaeger schlaeger2;
     private TEXT geschwindigkeit;
+    private TEXT neustartTutorial;
     private int punkteLinks;
     private int punkteRechts;
     private int tickerIntervall;
@@ -28,7 +29,11 @@ public class PingPongCom extends SPIEL
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 1);
         this.geschwindigkeitsAnzeige = 1;
         geschwindigkeit.setzeFarbe("pink");
-
+        
+        this.neustartTutorial = new TEXT(150, 550, "drücke R für Neustart");
+        neustartTutorial.setzeSichtbar(true);
+        neustartTutorial.setzeFarbe("rot");
+        
         this.schlaeger1 = new Schlaeger();
         schlaeger1.setzeGroesse(20, 100);
         schlaeger1.setzeMittelpunkt(790, 300);
@@ -54,6 +59,7 @@ public class PingPongCom extends SPIEL
             this.punkteLinks = this.punkteLinks +1;
             setzePunkteanzeigeLinks(this.punkteLinks);
             ball.setzeMittelpunkt(400, 300);
+            neustartTutorial.setzeSichtbar(false);
             if(this.tickerIntervall > 6)
             {
                 this.tickerIntervall = this.tickerIntervall -1;
@@ -68,6 +74,7 @@ public class PingPongCom extends SPIEL
             this.punkteRechts = this.punkteRechts +1;
             setzePunkteanzeigeRechts(this.punkteRechts);
             ball.setzeMittelpunkt(400, 300);
+            neustartTutorial.setzeSichtbar(false);
             if(this.tickerIntervall > 6)
             {
                 this.tickerIntervall = this.tickerIntervall -1;
@@ -176,6 +183,7 @@ public class PingPongCom extends SPIEL
             this.geschwindigkeitsAnzeige = 1;
             schlaeger1.setzeMittelpunkt(790, 300);
             schlaeger2.setzeMittelpunkt(10, 300);
+            neustartTutorial.setzeSichtbar(true);
         }   
     }
 
