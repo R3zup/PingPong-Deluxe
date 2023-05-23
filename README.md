@@ -1,60 +1,62 @@
-import javax.swing.*;
+import javax.swing.*; 
 import java.awt.*;
 
 public class GameMenu extends JFrame {
+
+private JButton oneVsOneButton, oneVsComputerButton, highScoreButton, customizationButton;
+private PingPong pingPong;
+
+public GameMenu() {
+    setTitle("Game Menu");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
-    private JButton oneVsOneButton, oneVsComputerButton, highScoreButton, customizationButton;
+    JPanel mainPanel = new JPanel(new GridLayout(4,1,10,10));
+    mainPanel.setPreferredSize(new Dimension(800,600));
+    add(mainPanel);
     
-    public GameMenu() {
-        setTitle("Game Menu");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        JPanel mainPanel = new JPanel(new GridLayout(4,1,10,10));
-        mainPanel.setPreferredSize(new Dimension(800,600));
-        add(mainPanel);
-        
-        oneVsOneButton = new JButton("1 vs 1");
-        oneVsOneButton.setPreferredSize(new Dimension(200, 80));
-        oneVsOneButton.addActionListener(e -> startOneVsOneGame());
-        mainPanel.add(oneVsOneButton);
-        
-        oneVsComputerButton = new JButton("1 vs Computer");
-        oneVsComputerButton.setPreferredSize(new Dimension(200, 80));
-        oneVsComputerButton.addActionListener(e -> startOneVsComputerGame());
-        mainPanel.add(oneVsComputerButton);
-        
-        highScoreButton = new JButton("Highscores");
-        highScoreButton.setPreferredSize(new Dimension(200, 80));
-        highScoreButton.addActionListener(e -> showHighScores());
-        mainPanel.add(highScoreButton);
-        
-        customizationButton = new JButton("Customization");
-        customizationButton.setPreferredSize(new Dimension(200, 80));
-        customizationButton.addActionListener(e -> showCustomization());
-        mainPanel.add(customizationButton);
-        
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
+    oneVsOneButton = new JButton("1 vs 1");
+    oneVsOneButton.setPreferredSize(new Dimension(200, 80));
+    oneVsOneButton.addActionListener(e -> startOneVsOneGame());
+    mainPanel.add(oneVsOneButton);
     
-    private void startOneVsOneGame() {
-        
-    }
+    oneVsComputerButton = new JButton("1 vs Computer");
+    oneVsComputerButton.setPreferredSize(new Dimension(200, 80));
+    oneVsComputerButton.addActionListener(e -> startOneVsComputerGame());
+    mainPanel.add(oneVsComputerButton);
     
-    private void startOneVsComputerGame() {
-        
-    }
+    highScoreButton = new JButton("Highscores");
+    highScoreButton.setPreferredSize(new Dimension(200, 80));
+    highScoreButton.addActionListener(e -> showHighScores());
+    mainPanel.add(highScoreButton);
     
-    private void showHighScores() {
-        
-    }
+    customizationButton = new JButton("Customization");
+    customizationButton.setPreferredSize(new Dimension(200, 80));
+    customizationButton.addActionListener(e -> showCustomization());
+    mainPanel.add(customizationButton);
     
-    private void showCustomization() {
-        
-    }
+    pack();
+    setLocationRelativeTo(null);
+    setVisible(true);
+}
+
+private void startOneVsOneGame() {
+    setVisible(false);
+    pingPong = new PingPong();
+}
+
+private void startOneVsComputerGame() {
     
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(GameMenu::new);
-    }
+}
+
+private void showHighScores() {
+    
+}
+
+private void showCustomization() {
+    
+}
+
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(GameMenu::new);
+}
 }
