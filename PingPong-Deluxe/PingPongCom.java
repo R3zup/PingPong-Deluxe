@@ -29,11 +29,11 @@ public class PingPongCom extends SPIEL
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 1);
         this.geschwindigkeitsAnzeige = 1;
         geschwindigkeit.setzeFarbe("pink");
-        
+
         this.neustartTutorial = new TEXT(150, 550, "drücke R für Neustart");
         neustartTutorial.setzeSichtbar(true);
         neustartTutorial.setzeFarbe("rot");
-        
+
         this.schlaeger1 = new Schlaeger();
         schlaeger1.setzeGroesse(20, 100);
         schlaeger1.setzeMittelpunkt(790, 300);
@@ -51,6 +51,10 @@ public class PingPongCom extends SPIEL
         this.tickerIntervall = 15;
     }
 
+    /**
+     * Erhöht den Punktestand und setzt den Ball zurück, erhöht außerdem die Geschwindigkeit bei jedem Punkt.
+     * Startet das Spiel neu, wenn der Computer 3 Punkte erzielt.
+     */
     public void punkten()
     {
 
@@ -101,6 +105,10 @@ public class PingPongCom extends SPIEL
         }
     }
 
+    /**
+     * Bewegt den rechten Schläger mit Pfeiltaste oben und unten.
+     * Der Computer verfolgt den Ball abhängig davon ob er sich in der oberen oder unteren Spielhälfte bewegt.
+     */
     public void schlaegerBewegen()
     {
 
@@ -139,6 +147,11 @@ public class PingPongCom extends SPIEL
         }
     }
 
+    /**
+     * Der Ball bewegt sich um die gegeben Werte deltaX und deltaY.
+     * Der Ball prallt ab wenn er den oberen und unteren Spielfeldrand berührt.
+     * Der Ball prallt von den Schlägern ab.
+     */
     public void bewegen()
     {
         ball.verschiebenUm(deltaX,deltaY);     
@@ -168,6 +181,9 @@ public class PingPongCom extends SPIEL
 
     }
 
+    /**
+     * Startet das gesamte Spiel neu.
+     */
     public void neustart()
     {
         if(tasteGedrueckt(17))
@@ -187,6 +203,9 @@ public class PingPongCom extends SPIEL
         }   
     }
 
+    /**
+     * Speichert die Punktzahl des jeweiligen Spielers.
+     */
     public void highscoreSpeichern() {
         Path p = Path.of("/Users/Guest/Downloads/PingPong-Deluxe-main/Highscore.txt");
         try {
@@ -199,6 +218,9 @@ public class PingPongCom extends SPIEL
         }
     }
 
+    /**
+     * Ermöglicht die Synchronisation der Methoden.
+     */
     @Override
     public void tick()
     {

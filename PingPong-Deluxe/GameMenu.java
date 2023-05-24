@@ -1,5 +1,10 @@
 import javax.swing.*; 
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class GameMenu extends JFrame {
 
@@ -22,6 +27,7 @@ public GameMenu() {
     nameFrame = new JFrame("name eingeben");
     nameFrame.setSize(400, 300);
     nameFrame.add(namenEingabe);
+    nameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     oneVsOneButton = new JButton("1 vs 1");
     oneVsOneButton.setPreferredSize(new Dimension(200, 80));
@@ -72,7 +78,13 @@ private void spielernameEingabe()
 }
 
 private void showHighScores() {
-    
+    Path p = Path.of("/Users/Guest/Downloads/PingPong-Deluxe-main/Highscore.txt");
+    try {
+            String x = Files.readString(p);
+            System.out.println(x);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 }
 
 private void showCustomization() {

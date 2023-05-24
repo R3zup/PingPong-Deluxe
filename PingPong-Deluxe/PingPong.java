@@ -37,6 +37,10 @@ public class PingPong extends SPIEL
         this.tickerIntervall = 15;
     }
 
+    /**
+     * Erhöht den Punktestand und setzt den Ball zurück, erhöht außerdem die Geschwindigkeit bei jedem Punkt.
+     * Startet das Spiel neu, wenn ein Spieler dreißig Punkte erreicht.
+     */
     public void punkten()
     {
 
@@ -99,6 +103,10 @@ public class PingPong extends SPIEL
         }
     }
 
+    /**
+     * Bewegt den rechten Schläger mit Pfeiltaste oben und unten.
+     * Bewegt den linken Schläger mit W und S.
+     */
     public void schlaegerBewegen()
     {
         if(schlaeger2.getY() >0)
@@ -134,6 +142,11 @@ public class PingPong extends SPIEL
         }
     }
 
+    /**
+     * Der Ball bewegt sich um die gegeben Werte deltaX und deltaY.
+     * Der Ball prallt ab wenn er den oberen und unteren Spielfeldrand berührt.
+     * Der Ball prallt von den Schlägern ab.
+     */
     public void bewegen()
     {
         ball.verschiebenUm(deltaX,deltaY);     
@@ -163,6 +176,9 @@ public class PingPong extends SPIEL
 
     }
 
+    /**
+     * Startet das gesamte Spiel neu.
+     */
     public void neustart()
     {
         if(tasteGedrueckt(17))
@@ -181,6 +197,9 @@ public class PingPong extends SPIEL
         }   
     }
 
+    /**
+     * Ermöglicht die Synchronisation der Methoden.
+     */
     @Override
     public void tick()
     {

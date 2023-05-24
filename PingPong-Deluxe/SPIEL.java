@@ -166,10 +166,10 @@ public class SPIEL
      * @param   taste   ganzzahliges Kuerzel der Taste (Farben_Tastencode.pdf) 
      *                  oder ENUM-Typ aus Klasse TASTE (darin die Klassen-Doku lesen)
      */
-    public void tasteReagieren( int taste ) 
-    {
-        System.out.println( "Taste mit Kuerzel " + taste + " wurde gedrueckt" );
-    }
+    //public void tasteReagieren( int taste ) 
+    //{
+        //System.out.println( "Taste mit Kuerzel " + taste + " wurde gedrueckt" );
+    //}
     
     
     

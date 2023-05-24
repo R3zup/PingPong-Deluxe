@@ -1,10 +1,1 @@
-Tonchick:5
-Andi:3
-Adrian:25
-Chris:4
-Adrian:0
-Adrian:5
-sjnsjngbr:0
-Adrian:1
-Adolf:5
-Adi:25
+Adrian:52
