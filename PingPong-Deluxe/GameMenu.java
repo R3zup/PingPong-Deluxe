@@ -3,16 +3,25 @@ import java.awt.*;
 
 public class GameMenu extends JFrame {
 
-private JButton oneVsOneButton, oneVsComputerButton, highScoreButton, customizationButton;
+private JButton oneVsOneButton, oneVsComputerButton, highScoreButton, customizationButton, okay;
 private PingPong pingPong;
+private JTextField name;
+private JPanel namenEingabe, mainPanel;
+private JFrame nameFrame;
 
 public GameMenu() {
     setTitle("Game Menu");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
-    JPanel mainPanel = new JPanel(new GridLayout(4,1,10,10));
+    mainPanel = new JPanel(new GridLayout(4,1,10,10));
     mainPanel.setPreferredSize(new Dimension(800,600));
     add(mainPanel);
+    
+    namenEingabe = new JPanel();
+    
+    nameFrame = new JFrame("name eingeben");
+    nameFrame.setSize(400, 300);
+    nameFrame.add(namenEingabe);
     
     oneVsOneButton = new JButton("1 vs 1");
     oneVsOneButton.setPreferredSize(new Dimension(200, 80));
@@ -34,6 +43,13 @@ public GameMenu() {
     customizationButton.addActionListener(e -> showCustomization());
     mainPanel.add(customizationButton);
     
+    name = new JTextField("Spielername");
+    namenEingabe.add(name);
+    
+    okay = new JButton("Okay");
+    okay.addActionListener(e -> spielernameEingabe());
+    namenEingabe.add(okay);
+    
     pack();
     setLocationRelativeTo(null);
     setVisible(true);
@@ -45,7 +61,14 @@ private void startOneVsOneGame() {
 }
 
 private void startOneVsComputerGame() {
-    
+   setVisible(false);
+   nameFrame.setVisible(true);
+}
+
+private void spielernameEingabe()
+{
+    nameFrame.setVisible(false);
+    new PingPongCom(name.getText());
 }
 
 private void showHighScores() {
