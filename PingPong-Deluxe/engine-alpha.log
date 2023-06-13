@@ -1,1 +1,1 @@
-[Wed May 10 08:14:02 CEST 2023][ERROR] Kritischer Fehler im Ticker: Eine Ausnahme wurde nicht abgefangen. Der Ticker wurde angehalten. Die folgende StackTrace sollte dir weitere Informationen liefern. (Manager.java:199)
+[Tue Jun 13 08:10:50 CEST 2023][ERROR] Das Bild konnte nicht geladen werden: /Users/Guest/Downloads/PingPong-Deluxe-main (ImageLoader.java:51)
