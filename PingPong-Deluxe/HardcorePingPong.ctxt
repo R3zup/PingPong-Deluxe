@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=HardcorePingPong
+comment1.params=spieler
+comment1.target=HardcorePingPong(java.lang.String)
+comment2.params=
+comment2.target=void\ punkten()
+comment2.text=\n\ Erh\u00F6ht\ den\ Punktestand\ und\ setzt\ den\ Ball\ zur\u00FCck.\n\ Startet\ das\ Spiel\ neu,\ wenn\ der\ Computer\ 3\ Punkte\ erzielt.\n
+comment3.params=
+comment3.target=void\ schlaegerBewegen()
+comment3.text=\n\ Bewegt\ den\ rechten\ Schl\u00E4ger\ mit\ Pfeiltaste\ oben\ und\ unten.\n\ Der\ Computer\ verfolgt\ den\ Ball\ abh\u00E4ngig\ davon,\ an\ welcher\ Position\ der\ Ball\ sich\ befindet.\n
+comment4.params=
+comment4.target=void\ bewegen()
+comment4.text=\n\ Der\ Ball\ bewegt\ sich\ um\ die\ gegeben\ Werte\ deltaX\ und\ deltaY.\n\ Der\ Ball\ prallt\ ab\ wenn\ er\ den\ oberen\ und\ unteren\ Spielfeldrand\ ber\u00FChrt.\n\ Der\ Ball\ prallt\ von\ den\ Schl\u00E4gern\ ab.\n
+comment5.params=
+comment5.target=void\ neustart()
+comment5.text=\n\ Startet\ das\ gesamte\ Spiel\ neu.\n
+comment6.params=
+comment6.target=void\ highscoreSpeichern()
+comment6.text=\n\ Speichert\ die\ Punktzahl\ des\ jeweiligen\ Spielers.\n
+comment7.params=
+comment7.target=void\ zeitmessungBeenden()
+comment7.text=\n\ Beendet\ die\ Zeitmessung\n
+comment8.params=
+comment8.target=void\ tick()
+comment8.text=\n\ Erm\u00F6glicht\ die\ Synchronisation\ der\ Methoden.\n
+numComments=9

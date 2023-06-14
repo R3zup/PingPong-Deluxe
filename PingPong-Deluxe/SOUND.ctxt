@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=SOUND
+comment0.text=\r\n\ Klasse\ SOUND\ kann\ MP3-Dateien\ abspielen\r\n\ \r\n\ @author\ \ \ \ \ \ mike\ ganshorn\r\n\ \r\n\ @version\ \ \ \ \ 2.0\ (2017-04-11)\r\n\ \r\n\ @changelog\ \ \ 2.0\ Umstieg\ von\ javaZoom\ auf\ Engine-Alpha-Sound\r\n
+comment1.params=datei
+comment1.target=SOUND(java.lang.String)
+comment1.text=\r\n\ Konstruktor\ der\ Klasse\ SOUND.\r\n\ \r\n\ @param\ \ \ datei\ \ \ Name\ der\ Datei\ (mit\ Endung)\ -\ muss\ im\ Projekt-Ordner\ liegen\r\n
+comment2.params=
+comment2.target=void\ play()
+comment2.text=\r\n\ Methode\ play.\r\n\r\n
+comment3.params=
+comment3.target=void\ loop()
+comment3.text=\r\n\ Methode\ loop.\r\n\r\n
+comment4.params=
+comment4.target=void\ pause()
+comment4.text=\r\n\ Methode\ pause.\r\n\r\n
+comment5.params=
+comment5.target=void\ unpause()
+comment5.text=\r\n\ Methode\ unpause.\r\n\r\n
+comment6.params=
+comment6.target=void\ stop()
+comment6.text=\r\n\ Methode\ stop.\r\n\r\n
+numComments=7
