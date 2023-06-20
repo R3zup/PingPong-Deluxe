@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=TASTE
+comment0.text=\r\n\ Klasse\ TASTE\ stellt\ Konstanten\ zur\ Verfuegung\ fuer\ die\ Methode\ tasteReagieren.\ \r\n\ Damit\ muessen\ die\ Tasten\ nicht\ mehr\ als\ Zahl\ angegeben\ werden\ sondern\ koennen\ \r\n\ beim\ Namen\ genannt\ werden.\r\n\ \r\n\ \ \ \ Ziffern\:\ \ \ \ \ \ \ \ \ \ \ \ \ \ TASTE._0\ bis\ TASTE._9\r\n\ \r\n\ \ \ \ Buchstaben\:\ \ \ \ \ \ \ \ \ \ \ TASTE.A\ bis\ TASTE.B\r\n\ \r\n\ \ \ \ Pfeiltasten\:\ \ \ \ \ \ \ \ \ \ TASTE.RAUF,\ TASTE.RUNTER,\ TASTE.LINKS,\ TASTE.RECHTS\r\n\ \r\n\ \ \ \ Sondertasten\:\ \ \ \ \ \ \ \ \ TASTE.ENTER,\ TASTE.ESCAPE,\ TASTE.LEERTASTE,\ TASTE.MINUS,\ TASTE.PLUS\r\n\ \r\n\ \ \ \ Ungueltige\ Tasten\:\ \ \ \ TASTE.INVALID\r\n\ \r\n\ @author\ \ \ \ \ \ mike\ ganshorn\r\n\ @version\ \ \ \ \ 1.0\ (2017-04-11)\r\n
+numComments=1
