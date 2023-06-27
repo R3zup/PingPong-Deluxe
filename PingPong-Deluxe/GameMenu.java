@@ -22,7 +22,7 @@ public class GameMenu extends JFrame {
         setPreferredSize(new Dimension(800, 600));
         setResizable(false);
 
-        ImageIcon backgroundImage = new ImageIcon("/Users/Guest/Downloads/PingPong-Deluxe-main/PingPong-Deluxe/back.png");
+        ImageIcon backgroundImage = new ImageIcon("back.png");
 
         JPanel backgroundPanel = new JPanel() 
             {
