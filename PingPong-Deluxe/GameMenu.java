@@ -120,7 +120,7 @@ public class GameMenu extends JFrame {
      * (Adrian, Daniil, Internetquelle:https://www.baeldung.com/java-write-to-file)
      */
     private void showHighScores() {
-        Path p = Path.of("/Users/Guest/Downloads/PingPong-Deluxe-main/Highscore.txt");
+        Path p = Path.of("Highscore.txt");
         try {
             System.out.print('\u000C');
             String x = Files.readString(p);

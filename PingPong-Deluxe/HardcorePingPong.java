@@ -199,7 +199,7 @@ public class HardcorePingPong extends SPIEL
      * (Adrian, Internetquelle: https://www.baeldung.com/java-write-to-file)
      */
     public void highscoreSpeichern() {
-        Path p = Path.of("/Users/Guest/Downloads/PingPong-Deluxe-main/Highscore.txt");
+        Path p = Path.of("Highscore.txt");
         try {
             String x = Files.readString(p);
             Path filePath = Files.writeString(p, x + "\n" + this.spieler + ":" + zeitVergangen / 1000000000 + " Sekunden (Hardcore)");
