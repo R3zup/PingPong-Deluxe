@@ -168,7 +168,7 @@ public class SPIEL
      */
     //public void tasteReagieren( int taste ) 
     //{
-        //System.out.println( "Taste mit Kuerzel " + taste + " wurde gedrueckt" );
+      //  System.out.println( "Taste mit Kuerzel " + taste + " wurde gedrueckt" );
     //}
     
     
