@@ -201,17 +201,7 @@ public class PingPong extends SPIEL
             this.geschwindigkeitsAnzeige = 1;
             schlaeger1.setzeMittelpunkt(790, 300);
             schlaeger2.setzeMittelpunkt(10, 300);
-            spielStarten();
         }   
-    }
-
-    public void spielStarten()
-    {
-        if(tasteGedrueckt(31) == true)
-        {
-            tickerNeuStarten(15);
-            this.tickerIntervall = 15;
-        }
     }
 
     /**
