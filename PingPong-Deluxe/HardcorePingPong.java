@@ -39,6 +39,7 @@ public class HardcorePingPong extends SPIEL
         geschwindigkeit.setzeFarbe("pink");
         
         this.zeitAnzeige = new TEXT(400, 100, "Zeit: "+ zeitVergangen2 /1000000000 +"s" );
+        zeitAnzeige.setzeFarbe("lila");
 
         this.neustartTutorial = new TEXT(150, 550, "drücke R für Neustart");
         neustartTutorial.setzeSichtbar(true);
