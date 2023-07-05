@@ -22,6 +22,10 @@ public class HardcorePingPong extends SPIEL
     private long startZeit;
     private long zeitVergangen;
     private long endZeit;
+    private TEXT zeitAnzeige;
+    private long startZeit2;
+    private long zeitVergangen2;
+    private long endZeit2;
 
     public HardcorePingPong(String spieler)
     {
@@ -33,6 +37,8 @@ public class HardcorePingPong extends SPIEL
         this.geschwindigkeit = new TEXT(400, 50, "Geschwindigkeit: "+ 10);
         this.geschwindigkeitsAnzeige = 10;
         geschwindigkeit.setzeFarbe("pink");
+        
+        this.zeitAnzeige = new TEXT(400, 100, "Zeit: "+ zeitVergangen2 /1000000000 +"s" );
 
         this.neustartTutorial = new TEXT(150, 550, "drücke R für Neustart");
         neustartTutorial.setzeSichtbar(true);
@@ -53,6 +59,7 @@ public class HardcorePingPong extends SPIEL
         setzeHintergrundgrafik("Hintergrund.jpg");
 
         this.startZeit = System.nanoTime();
+        this.startZeit2 = System.nanoTime();
         tickerNeuStarten(5);
         setzeAllePunkteanzeigenSichtbar();
         this.tickerIntervall = 5;
@@ -86,21 +93,7 @@ public class HardcorePingPong extends SPIEL
         {
             zeitmessungBeenden();
             highscoreSpeichern();
-            this.startZeit = 0;
-            this.zeitVergangen = 0;
-            this.endZeit = 0;
-            tickerNeuStarten(5);
-            this.tickerIntervall = 5;
-            setzePunkteanzeigeRechts(0);
-            ball.setzeMittelpunkt(400, 300);
-            setzePunkteanzeigeLinks(0);
-            this.punkteRechts = 0;
-            this.punkteLinks = 0;
-            geschwindigkeit.setzeInhalt("Geschwindigkeit: " + 10);
-            this.geschwindigkeitsAnzeige = 1;
-            schlaeger1.setzeMittelpunkt(790, 300);
-            schlaeger2.setzeMittelpunkt(10, 300);
-            this.startZeit = System.nanoTime();
+            System.exit(0);
         }
     }
 
@@ -178,6 +171,9 @@ public class HardcorePingPong extends SPIEL
             this.startZeit = 0;
             this.zeitVergangen = 0;
             this.endZeit = 0;
+            this.startZeit2 = 0;
+            this.zeitVergangen2 = 0;
+            this.endZeit2 = 0; 
             tickerNeuStarten(5);
             this.tickerIntervall = 5;
             setzePunkteanzeigeRechts(0);
@@ -190,7 +186,7 @@ public class HardcorePingPong extends SPIEL
             schlaeger1.setzeMittelpunkt(790, 300);
             schlaeger2.setzeMittelpunkt(10, 300);
             neustartTutorial.setzeSichtbar(true);
-            this.startZeit = System.nanoTime();
+            zeitAnzeige.setzeInhalt("Zeit: "+ 0 +"s");
         }   
     }
 
@@ -219,6 +215,13 @@ public class HardcorePingPong extends SPIEL
         this.endZeit = System.nanoTime();
         this.zeitVergangen = endZeit - startZeit;
     }
+    
+    public void zeitmessung()
+    {
+        this.endZeit2 = System.nanoTime();
+        this.zeitVergangen2 = endZeit2 - startZeit2;
+        zeitAnzeige.setzeInhalt("Zeit: "+ zeitVergangen2 /1000000000 +"s");
+    }
 
     /**
      * Ermöglicht die Synchronisation der Methoden.
@@ -231,5 +234,6 @@ public class HardcorePingPong extends SPIEL
         punkten();
         schlaegerBewegen();
         neustart();
+        zeitmessung();
     }
 }
